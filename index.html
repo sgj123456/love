@@ -27,6 +27,13 @@
             background-color: aliceblue;
         }
 
+        #ss{
+            display: block;
+            position: relative;
+            border: #66ccff solid;
+            width: 20em;
+            margin: auto;
+        }
         #xin {
             position: relative;
             border: #66ccff solid;
@@ -147,7 +154,17 @@
     var body = document.getElementById('body')
     var box = document.getElementById('box')
     box.addEventListener('click', () => {
-        body.innerHTML = '<div id="riqi"></div><div style="position: relative;height: 100px;"></div><div id="xin"><img src="./sucai/男半个心.jpg" alt=""><img src="./sucai/女半个心.jpg" alt=""></div>'
+        body.innerHTML = `<div id="riqi"></div><div style="position: relative;height: 100px;"></div><div id="xin"><img src="./sucai/男半个心.jpg" alt=""><img src="./sucai/女半个心.jpg" alt=""></div>
+        <img src="./sucai/1 (1).jpg" alt="" id="ss">`
+        var a = 1
+        var ss = document.getElementById('ss')
+        setInterval(() => {
+            ss.src = './sucai/1 (' + a + ').jpg'
+            a++
+            if (a==25) {
+                a=1
+            }
+        }, 1000)
     })
     var zhi = true
     function music() {
@@ -158,4 +175,5 @@
         }
     }
     body.addEventListener('click', music)
+
 </script>
